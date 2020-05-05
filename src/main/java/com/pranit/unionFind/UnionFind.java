@@ -5,44 +5,6 @@ public class UnionFind {
     int[] data;
     int[] size;
 
-    public static void main(String[] args) {
-        UnionFind uf = new UnionFind(10);
-        uf.displayArray();
-        System.out.println("Test 4 and 3 Connection - "+ uf.isConnected(4, 3));
-        System.out.println();
-
-        uf.union(4, 3);
-        uf.displayArray();
-        System.out.println("Test 4 and 3 Connection - "+ uf.isConnected(4, 3));
-        System.out.println();
-
-        uf.union(3, 8);
-        uf.displayArray();
-        System.out.println();
-
-        uf.union(6, 5);
-        uf.union(9, 4);
-        uf.displayArray();
-        System.out.println();
-
-        uf.union(2, 1);
-        uf.union(5, 0);
-        uf.displayArray();
-        System.out.println();
-
-        uf.union(2, 7);
-        uf.union(6, 1);
-        uf.displayArray();
-        System.out.println();
-
-        uf.union(7, 3);
-        uf.displayArray();
-
-        System.out.println("Test 1 and 2 Connection - "+ uf.isConnected(1, 2));
-        System.out.println("Test 6 and 9 Connection - "+ uf.isConnected(6, 9));
-        System.out.println("Test 8 and 7 Connection - "+ uf.isConnected(8, 7));
-    }
-
     /**
      * Initialize data using length. Saves index as value.
      * Initialize size array. Save 1 as size of each tree.
@@ -99,5 +61,43 @@ public class UnionFind {
             System.out.print(size[i]+ ", ");
         }
         System.out.println("]");
+    }
+
+    public static void main(String[] args) {
+        UnionFind uf = new UnionFind(10);
+        uf.displayArray();
+        System.out.println("Test 4 and 3 Connection - "+ uf.isConnected(4, 3));
+        System.out.println();
+
+        uf.union(4, 3);
+        uf.displayArray();
+        System.out.println("Test 4 and 3 Connection - "+ uf.isConnected(4, 3));
+        System.out.println();
+
+        uf.union(3, 8);
+        uf.displayArray();
+        System.out.println();
+
+        uf.union(6, 5);
+        uf.union(9, 4);
+        uf.displayArray();
+        System.out.println();
+
+        uf.union(2, 1);
+        uf.union(5, 0);
+        uf.displayArray();
+        System.out.println();
+
+        uf.union(2, 7);
+        uf.union(6, 1);
+        uf.displayArray();
+        System.out.println();
+
+        uf.union(7, 3);
+        uf.displayArray();
+
+        System.out.println("Test 1 and 2 Connection - "+ uf.isConnected(1, 2));
+        System.out.println("Test 6 and 9 Connection - "+ uf.isConnected(6, 9));
+        System.out.println("Test 8 and 7 Connection - "+ uf.isConnected(8, 7));
     }
 }
