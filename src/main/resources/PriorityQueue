@@ -1,0 +1,61 @@
+Priority Queue
+
+Use Case
+  Track max 5 transactions from a stream of trasnactions
+
+Basic implementaion 
+  find max when you want to deleteMax, exchange it with last number and reduce the size of PQ
+  Insert element at the end
+  Complexity 
+    deleteMax is N
+    insert 1
+    getMax N
+   If we user Sorted/Ordered array then
+    deleteMax 1
+    insert N
+    getMax 1
+    
+    
+Binary Heaps
+  Binary tree representation in an array
+  Heap Order - Children are always smaller than immediate parent
+  Parent of index k is k/2
+  Children of index k are 2k and 2k+1
+  
+  If Children is higher than parent then make it ordered by using swim operation
+    Swim is exchange the child with smaller parent untill its heap ordered  
+  Insert in Heap
+    Insert at end and then do swim
+    
+  If Parent becomes smaller than child then perform sink
+    Exchange parent with higher child untill heap ordered
+  Remove from Heap
+    Return root
+    Echange last with root
+    and then do sink for root
+    Make last null
+
+  Complexity
+    deleteMax logN
+    insert logN
+    getMax 1
+    
+
+
+Heap Sort
+  Heap Order complete array using bottom-up method (start at end)
+    Start with 3 node heap and order it wioth sink operation
+    Move upwards and use sink to heap order bigger heaps
+  Sort
+    Exchange root with last element 
+    Remove last element from heap as it is sorted
+    and perform sink on root so as to get max at root and continue this untill last element
+Complexity NlogN
+  Its in-place algorithm (No extra space) for sorting in NlogN
+Its NOT stable
+
+
+
+
+
+   
