@@ -2,6 +2,7 @@ Selection Sort
 Select smallest from remaining and swap that with i and increment i
 Complexity n^2  
 	- Specific - 1/2 n^2 
+Sleection sort is NOT stable
 
 
 Insertion Sort
@@ -13,6 +14,7 @@ Complexity n^2
 
 best case complexity is N 
 worst case complexity 1/2 n^2
+Insertion sort is stable
 
 
 Shell Sort (h sort) 
@@ -21,6 +23,7 @@ Since insertion sort performs best on partially sorted array
 Use insertion sort and increment i by 13 or 4 (h) instead of 1
 At the end user 1 increment
 this will be give better performance
+Selection sort is NOT stable
 
 
 Merge Sort 
@@ -29,5 +32,21 @@ Merge subroutine (Uses AUX array) (Takes 2 sorted subarrys)
 	compare elements i and j where i is from first subarray and j is from 2nd subarry and then replace smallest from i and j with k in original array.
 	increment k index and the index of the one which is placed in original array  
 Complexity - N logN
+Merge sort is stable sort
 
-Quick Sort 
+
+Quick Sort
+Randomly shuffle the array
+Select the pivot and partition the array so as left side of pivot is less than pivot and right side is greater than pivot
+Recursively sort left and then recursivey sort right
+Implementation	
+	Take first element as pivot , maintain i and j as i as index of pivot+1 and j as lat index
+	increment i till its value is greater than pivot, decrement j untill its value is less than pivot
+	do this untill i >= j and then exhange j and k
+Quick sort is NOT stable
+Complexity - NlogN (Avg)
+ Faster than merge sort and less space as its in place merge
+ 
+
+
+
