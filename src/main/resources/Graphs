@@ -1,0 +1,42 @@
+Graph
+
+Representation using adjecency list
+  Each Vertex has a list of vertices which it can connect to
+  
+DFS (Can be used to see if vertex is connected to another vertex via a path)
+  Recursion
+  Create a array to store if vertex is marked and an array to store from where we visited  this vertex (to back trace the path)
+  Visit every edge and mark the vertex as visited
+  Recursively do this until we get all visited or null vertices in adjecency list of one of the vertex 
+    and then back track using the backtrack array and do the same recursion untill 
+    
+  private void dfs(Graph g, int v){
+    visited[v] = true;
+    for(int neighbour : g.getAdjecencyList(v)){
+      if(!visited(neighbour)){
+        dfs(g, neighbour)
+        backtrack[neighbur] = v;
+      }
+    }
+  }
+  
+
+
+BFS (Can get shortest path)
+  Using Queue
+  Mark the vertex as visited
+  Push all adjecent unmarked vertices to queue
+  Process from queue untill its empty
+
+
+Connected Components
+  gives if both vertices are connected in constant time
+  Uses DFS
+  
+  Visit all the vertices using DFS
+  Mark the visited ones and put the set one single indentifier of all connected vertices in an extra array
+  After the DFS is complete move to next unmarked vertex and perform same steps
+  
+  
+
+  
