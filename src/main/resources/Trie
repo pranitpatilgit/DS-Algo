@@ -1,0 +1,56 @@
+Trie
+(Index in Dictionaries, spelling checks)
+
+Normal Tries
+  Each node has R (256 ASCII characters) children
+  Store value at the the end of the word to mark there is a word (Maybe a page number)
+  Root is always blank
+  
+  Put recursevely add each char untill legth of key is reached and the put the value
+  
+  Get
+    Recursively check if last char has value or char has null value
+    return null or value
+  
+  Complexity
+    Sublinear logN
+    
+  Lot of null links so wastage of space
+  
+  
+  
+Ternary Search Trie (TST)
+   Each node has 3 links 
+    Left link is for the word starting with lower value charater than parent and right with higher value
+    Middle links are next word links
+    End of the word has a value assiciated with the node
+    
+   Search (Recursion)
+    Move to middle link untill next word is a match
+    If not then move to left or right , if its not match then search miss
+    
+   Put (Recursion)
+    Move to middle untill next is match 
+    Otherwise move to left or right
+    If null link is incontered then create new node and put next chars to the middle of new mode
+    
+   Complexity
+    Search logN
+    Put logN
+    
+   Less memory
+   
+   Improvement - create R roots based on charachters
+
+
+
+Character based operations of trie
+  Prefix or wildcard match (Autocomplete)
+  Longest Prefix (Routing table of ip addresses)
+  
+  
+  
+  
+  
+
+    
