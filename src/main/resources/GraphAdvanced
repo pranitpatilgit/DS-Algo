@@ -1,0 +1,38 @@
+Minimum Spanning Tree
+    Tree from a undirected and weighted graph which covers all the vertices with less wight and is not cyclic
+
+Weighted Graph Representation
+    Graph (Every vertex has edge list)
+        - addEdge
+        - getAdj
+        - getAllEdges
+    Edge(Vertex v, Vertex w, double weight)
+
+
+Kruskal's Algorithm for MST
+    Sort all the edges in ascending order
+    Add every edge to tree unless it make a cycle
+
+Prim's Algorithm for MST
+    Start with Vertex
+    Add all edges to PQ and dequeue the min edge and add to tree
+    Now we have 2 Vertices
+    Now add all the edges of new vertex to PQ
+    Repeat this (Skip if the vertex is already visited i.e. already on MST)
+
+
+Shortest Path Algorithms
+Weighted Directed Graph
+    Directed Edge - From and To and Weight
+
+Edge Relaxation
+    Keep distance array and edge array
+    Distance stores calculated distance between v and w and edge is latest edge to w
+    if new vertex is reachable with less distance than that of in distance array then replace that and edge
+
+Dijkstra's Algorithm For Shortest Path
+    put source with distance 0 in PQ
+    untill PQ is empty relax all edges of adjecent vertices
+        Relax if current distance > distance to vertex + edge weight then update distance and edge array
+        if PQ contains vertex then update the distance in PQ
+        otherwise insert new in PQ

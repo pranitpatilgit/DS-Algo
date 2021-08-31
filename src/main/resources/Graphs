@@ -36,7 +36,21 @@ Connected Components
   Visit all the vertices using DFS
   Mark the visited ones and put the set one single indentifier of all connected vertices in an extra array
   After the DFS is complete move to next unmarked vertex and perform same steps
-  
-  
 
-  
+----------------
+
+Diagraphs
+Find all the vertices reachable from a vertex
+    Use DFS
+    All Visited are reachable
+DFS in Diagraph Application - Mark and Sweep Garbage Collection
+BFS in Diagraph Application - Web crawler
+
+Topological Sort
+    Arrange the acyclic graph to sequence like a flow chart
+    Use DFS , put a vertex in a stack once its done processing i.e. no more edges to go
+
+Connected components in Diagraph / Strong components
+    Find topological sort of the diagraph
+    Pop from stack and run dfs on the that and mark all connected vertices in same connected component
+    continue until stack is empty
