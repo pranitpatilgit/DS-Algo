@@ -7,8 +7,8 @@ Sleection sort is NOT stable
 
 Insertion Sort
 Everything before index i is sorted
-increment i untill prev is > current
-then insert current to right position in left of i using j
+increment i until prev is > current (i)
+then insert current to right position in left of i
 Complexity n^2
 	- Specific - 1/4 n^2
 
