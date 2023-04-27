@@ -38,11 +38,11 @@ Merge sort is stable sort
 Quick Sort
 Randomly shuffle the array
 Select the pivot and partition the array so as left side of pivot is less than pivot and right side is greater than pivot
-Recursively sort left and then recursivey sort right
+Recursively sort left and then recursively sort right
 Implementation	
 	Take first element as pivot , maintain i and j as i as index of pivot+1 and j as lat index
-	increment i till its value is greater than pivot, decrement j untill its value is less than pivot
-	do this untill i >= j and then exhange j and k
+	increment i till its value is greater than pivot, decrement j until its value is less than pivot and then exchange them
+	do this until i >= j and then exchange j and pivot
 Quick sort is NOT stable
 Complexity - NlogN (Avg)
  Faster than merge sort and less space as its in place merge
