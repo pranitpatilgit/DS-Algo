@@ -8,14 +8,14 @@ DFS (Can be used to see if vertex is connected to another vertex via a path)
   Create a array to store if vertex is marked and an array to store from where we visited  this vertex (to back trace the path)
   Visit every edge and mark the vertex as visited
   Recursively do this until we get all visited or null vertices in adjecency list of one of the vertex 
-    and then back track using the backtrack array and do the same recursion untill 
+    and then back track using the backtrack array and do the same recursion until
     
   private void dfs(Graph g, int v){
     visited[v] = true;
     for(int neighbour : g.getAdjecencyList(v)){
       if(!visited(neighbour)){
         dfs(g, neighbour)
-        backtrack[neighbur] = v;
+        backtrack[neighbour] = v;
       }
     }
   }
@@ -26,7 +26,7 @@ BFS (Can get shortest path)
   Using Queue
   Mark the vertex as visited
   Push all adjecent unmarked vertices to queue
-  Process from queue untill its empty
+  Process from queue until its empty
 
 
 Connected Components
@@ -34,7 +34,7 @@ Connected Components
   Uses DFS
   
   Visit all the vertices using DFS
-  Mark the visited ones and put the set one single indentifier of all connected vertices in an extra array
+  Mark the visited ones and put the set one single identifier of all connected vertices in an extra array
   After the DFS is complete move to next unmarked vertex and perform same steps
 
 ----------------

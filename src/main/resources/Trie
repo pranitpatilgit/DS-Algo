@@ -6,7 +6,7 @@ Normal Tries
   Store value at the the end of the word to mark there is a word (Maybe a page number)
   Root is always blank
   
-  Put recursevely add each char untill legth of key is reached and the put the value
+  Put recursively add each char until length of key is reached and the put the value
   
   Get
     Recursively check if last char has value or char has null value
@@ -21,18 +21,18 @@ Normal Tries
   
 Ternary Search Trie (TST)
    Each node has 3 links 
-    Left link is for the word starting with lower value charater than parent and right with higher value
+    Left link is for the word starting with lower value character than parent and right with higher value
     Middle links are next word links
-    End of the word has a value assiciated with the node
+    End of the word has a value associated with the node
     
    Search (Recursion)
-    Move to middle link untill next word is a match
+    Move to middle link until next word is a match
     If not then move to left or right , if its not match then search miss
     
    Put (Recursion)
-    Move to middle untill next is match 
+    Move to middle until next is match
     Otherwise move to left or right
-    If null link is incontered then create new node and put next chars to the middle of new mode
+    If null link is encountered then create new node and put next chars to the middle of new mode
     
    Complexity
     Search logN
@@ -40,7 +40,7 @@ Ternary Search Trie (TST)
     
    Less memory
    
-   Improvement - create R roots based on charachters
+   Improvement - create R roots based on characters
 
 
 
