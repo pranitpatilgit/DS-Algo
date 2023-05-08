@@ -1,0 +1,9 @@
+Break down a problem in smaller sub-problems and solve it.
+
+Memoization
+    Solve it using a basic recursive algorithm. (focus on correctness)
+    Break Down a problem by plotting the recursive calls in a tree
+    Find Duplicates in the tree
+    Save the results of duplicates in a map or any relevant DS (memo) and use it in future calls
+    This reduces the time complexity
+    The time complexity can be visualized by considering teh height of the tree and number of subtrees
