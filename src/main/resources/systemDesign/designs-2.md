@@ -103,3 +103,55 @@
 ![whatsAppLLD.png](resources/whatsAppLLD.png)
 #### Evaluation
 #### Distinctive component
+
+---
+
+## Design Google Docs
+#### Requirements
+- Functional
+  - Multiple uses reading and editing documents simultaniously
+  - Conflict resolution
+  - Word Suggestion
+  - Views
+  - History
+- NFRs
+  - High Scalability
+  - Fault Tolerance
+  - High Consistency
+  - High Availability
+  - Low latency
+#### Estimation
+#### Storage schema
+#### High Level Design
+- Load Balancer
+- Database
+  - SQL for user info
+  - No SQL for documents
+    - We can store data in JSON or Markdown format
+- Blob Storage
+- Application Servers
+- Cache
+- Messaging Queue and Topic
+- CDN
+- Cache
+- Websockets
+- Monitoring
+![googleDocsHLD.png](resources/googleDocsHLD.png)
+#### API design
+- Create
+- Edit (position(x,y), value, operation)
+- Delete
+- Get Document
+#### Detailed Design
+- Concurrency
+  - Conflict Resolution
+    - Operational Transformation
+      - Lock free and non-blocking
+      - Executes the operations in order and notifies all users
+      - Challenging to develop
+    - Conflict Free Replicated Data Type (CRDT)
+      - Complex Data Structure but easy algorithm
+- Websocket servers and Server manager to be added
+  - Each server has local cache
+#### Evaluation
+#### Distinctive component
