@@ -129,3 +129,15 @@
 - 
 #### Evaluation
 #### Distinctive component
+
+---
+
+## Design Uber
+#### Requirements
+#### Estimation
+#### Storage schema
+#### High Level Design
+#### API design
+#### Detailed Design
+#### Evaluation
+#### Distinctive component
