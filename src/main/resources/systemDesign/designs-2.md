@@ -1,17 +1,3 @@
-## Design youtube
-#### Requirements
-- Functional
-- NFRs - Scalability, Fault Tolerance, Consistency etc
-#### Estimation
-#### Storage schema
-#### High Level Design
-#### API design
-#### Detailed Design
-#### Evaluation
-#### Distinctive component
-
----
-
 ## Design Yelp
 #### Requirements
 - Functional
