@@ -94,3 +94,15 @@ Resource Estimation
         - Total Storage for 1 year = 46.72 PB
 
 - Bandwidth estimation
+
+## RESHADED
+- R - Requirements
+  - Functional
+  - NFRs - Scalability, Fault Tolerance, Consistency etc
+- E - Estimation
+- S - Storage schema
+- H - High Level Design
+- A - API design
+- D - Detailed Design
+- E - Evaluation
+- D - Distinctive component
