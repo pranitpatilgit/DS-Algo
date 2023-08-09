@@ -199,6 +199,6 @@
 #### High Level Design
 #### API design
 #### Detailed Design
-    ![stockExchange.png](resources/stockExchange.png)
+![stockExchange.png](resources/stockExchange.png)
 #### Evaluation
 #### Distinctive component
