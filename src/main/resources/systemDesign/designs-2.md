@@ -141,3 +141,64 @@
   - Each server has local cache
 #### Evaluation
 #### Distinctive component
+
+---
+
+## Design NewsFeed
+#### Requirements
+- Functional
+  - Generation - Generate from vast content that user follows
+  - Content can be text, images, videos
+  - Ranking
+  - Display
+- NFRs
+  - High Scalability
+  - Fault Tolerance
+  - High Availability
+  - Low latency
+#### Estimation
+  - 500M Daily active users
+    - 10 Req per day per user = 5B / 24*3600 = Approx 58K req per sec
+    - Back of the envelope = 500M / 8000 serves
+    - Storage
+      - 500M posts - 1 Text 50 KB = 25 TB Text
+      - 500M / 5 Posts have 2MB media = 200 TB Media 
+#### Storage schema
+#### High Level Design
+  - Load Balancer
+  - CDN
+  - Database
+    - NoSql
+  - Blob Storage
+  - Cache
+  - Messaging
+#### API design
+  - Create Post
+  - Generate News Feed (Precalculated News Feed)
+    - Can be API + Asyn call through Messaging
+    - Think about Users frequency of viewing news feed to pre-generate the feed
+  - View News Feed
+#### Detailed Design
+  - Ranking Service
+    - Works on things such as, a user’s past history, likes, dislikes, comments, clicks etc.
+    - Select “candidates” posts to show in a newsfeed.
+    - Eliminate posts including misinformation or clickbait from the candidate posts.
+    - Create a list of friends a user frequently interacts with.
+    - Choose topics on which a user spent more time.
+    - This is computation heavy so more CPU power needed
+  ![newsFeedLLD.png](resources/newsFeedLLD.png)
+#### Evaluation
+#### Distinctive component
+
+---
+
+## Design NewsFeed
+#### Requirements
+#### Estimation
+#### Storage schema
+#### High Level Design
+#### API design
+#### Detailed Design
+    ![stockExchange.png](resources/stockExchange.png)
+#### Evaluation
+#### Distinctive component
