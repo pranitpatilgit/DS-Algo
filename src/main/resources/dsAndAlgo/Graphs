@@ -1,6 +1,6 @@
 Graph
 
-Representation using adjecency list
+Representation using adjacency list
   Each Vertex has a list of vertices which it can connect to
   
 DFS (Can be used to see if vertex is connected to another vertex via a path)
@@ -50,7 +50,8 @@ Topological Sort
     Arrange the acyclic graph to sequence like a flow chart
     Use DFS , put a vertex in a stack once its done processing i.e. no more edges to go
 
+
 Connected components in Diagraph / Strong components
-    Find topological sort of the diagraph
+    Find topological sort of the diagraph (reverse post order - elements on stack)
     Pop from stack and run dfs on the that and mark all connected vertices in same connected component
     continue until stack is empty

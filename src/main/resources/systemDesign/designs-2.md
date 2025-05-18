@@ -192,7 +192,7 @@
 
 ---
 
-## Design NewsFeed
+## Design Stock Exchange
 #### Requirements
 #### Estimation
 #### Storage schema
@@ -200,5 +200,27 @@
 #### API design
 #### Detailed Design
 ![stockExchange.png](resources/stockExchange.png)
+#### Evaluation
+#### Distinctive component
+
+---
+
+## Design TinyURL
+#### Requirements
+#### Estimation
+#### Storage schema
+#### High Level Design
+  - Load Balancer
+  - Database
+    - NoSQL - MongoDB as system is read heavy
+  - Cache
+  - Sequencer
+  - Rate Limiter (Avoid DDOS)
+#### API design
+  - Create
+  - Delete
+  - Redirect
+#### Detailed Design
+![tinyUrlLLD.png](resources/tinyUrlLLD.png)
 #### Evaluation
 #### Distinctive component
