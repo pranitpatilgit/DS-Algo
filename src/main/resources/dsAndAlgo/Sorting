@@ -28,8 +28,8 @@ Selection sort is NOT stable
 
 Merge Sort 
 Divide array and recursively sort array and then merge
-Merge subroutine (Uses AUX array) (Takes 2 sorted subarrys)
-	compare elements i and j where i is from first subarray and j is from 2nd subarry and then replace smallest from i and j with k in original array.
+Merge subroutine (Uses AUX array) (Takes 2 sorted subarrays)
+	compare elements i and j where i is from first subarray and j is from 2nd subarray and then replace smallest from i and j with k in original array.
 	increment k index and the index of the one which is placed in original array  
 Complexity - N logN
 Merge sort is stable sort
