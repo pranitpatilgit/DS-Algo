@@ -1,35 +1,44 @@
-- Solidify the Requirements
-- Scope the problem
-- Engagement
+# Working Towards Problem
+- Start by clarifying requirements
+- Create concrete requirements
+- Ask about SLAs
+- Ask about Non-Functional req - number of users, availability, SLAs
+- Do not sit in silence - think out load so as to include everyone in the process
+
+# Work Backwords (Functional Requirements)
+- Clarify the requirements from business perspective first and then technical later
+- Start from customer experience and define requirements 
+- Use this to limit teh scope of design 
+- Identify WHO are the customers
+    Use cases, time zones etc
+## Scaling Requirements
+- How many users, transaction rate
+    Helps in decision of Horizontal scaling
+- Scale of the data
+    Helps in storage - distributed or simpler
+- Define Latency Requirements SLAs
+    Helps in caching , CDN decisions
+- Availability Requirements (How crutial it is to the business)
+    Helps in CAP theorem
+- Ask Yourself about the data
+  - Size of the data
+  - Rate of growth of data over time
+  - How will it be consumed by subsystems or users
+  - Read heavy or Write heavy
+  - Consistency or Eventual Consistency
+  - Durability of the data
+  - Privacy regulations on data
+---
+
+## Design
+- Start with HLD with High Level components
+- Go In details of each component along with scaling
+- Identify Bottlenecks, Tradeoffs, Maintainance
+- Talk about Observability and monitoring
 
 ---
 
-- Ask Refining Questions
-- Handle Data
-- Start with High Level Design and then Go deep.
-- Discuss the components
-- Discuss the trade-offs
-
----
-
-Questions to Ask
-- Functional requirements
-  - Needed directly
-- Non Functional requirements
-
-- Number of Users
-- Number of Queries per second
-
-Ask Yourself about the data
-- Size of the data
-- Rate of growth of data over time
-- How will it be consumed by subsystems or users
-- Read heavy or Write heavy
-- Consistency or Eventual Consistency
-- Durability of the data
-- Privacy regulations on data
-
-Consistency
+## Consistency
 - Eventual Consistency
   - Data is eventually replicated across all the replicas
   - It ensures High Availability
@@ -46,7 +55,6 @@ Consistency
 - Strict Consistency
   - Transactions
   - Less performant
-
 
 ---
 
