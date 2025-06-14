@@ -1,20 +1,37 @@
 ## Design System to Process 1M messages per second
 #### Requirements
 - Functional
+  - Process 100K Messages Per Seconds
+  - Distribute to 10k Clients
+  - Handle slow Clients
 - NFRs
     - High Scalability
     - Fault Tolerance
     - High Availability
-    - Consistency in users and auth
-        - Can be weak in places and reviews
     - Low latency
 #### Estimation
+- Assume 1 req take 10 millis to process
+  - 100 req per second by 1 process | Multithreading 10 => 1000 Req per sec per server
+  - 100 Partitions and 100 Consumers
 #### Storage schema
 #### High Level Design
-- Kafka (Batch processing) (Executors)
-- 
+- Producers
+- Kafka
+- Application Servers (Consumers - Batch processing + Executors)
+- Distribute via different consumers for continuous stream - 1 consumer group per client
+  - Multiple consumer Groups can run on same server
+  - Use Websockets for continuos stream if its PUSH
+  - Drop old message from websocket buffer if a particular client is slow
+- Observability - Alerts and Logs (Grafana)
 #### API design
 #### Detailed Design
+- Use protocol buffer for serialization as it reduced message size
+- Websockets subscribes to kafka Topic
+- SSL for Websockets
+- Monitor consumer lag, health, websokect connections and metrics, droppeed messages
+- Reporting
+  - System Throughput
+- Use K8s
 #### Evaluation
 #### Distinctive component
 
@@ -55,3 +72,15 @@ https://www.youtube.com/watch?v=iwRaNYa8yTw&list=PLJq-63ZRPdBvQnN9YQlpe5dKKg56MD
 #### Detailed Design
 #### Evaluation
 #### Distinctive component
+
+---
+
+## Design Stock Broker
+- Handle order cancellations first with exchange and then communicate to user
+- Think about idempotency
+- Need RDBMS bcoz of consitency
+- Display Price of Share - Take Average accross exchanges or display according to exchange
+  - Get price info (market data) from exchanges via UDP
+  - Create the price by throttling or get weighted average or aggregated by some time
+  - Use cache to display price
+  - 
