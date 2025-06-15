@@ -46,10 +46,13 @@ https://www.youtube.com/watch?v=iwRaNYa8yTw&list=PLJq-63ZRPdBvQnN9YQlpe5dKKg56MD
     - Ultra Low latency
     - High Accuracy
     - High Consistency
+    - Reliability
 #### Estimation
 #### Storage schema
-#### High Level Design!
+#### API design
+#### Detailed Design
 - Market Data Capture (Use colocated servers of exchange)
+- Works on UDP
 ![MarketDataCapture.png](resources/MarketDataCapture.png)
 - Processing Market Data
 ![MarketDataProcessing.png](resources/MarketDataProcessing.png)
@@ -68,8 +71,12 @@ https://www.youtube.com/watch?v=iwRaNYa8yTw&list=PLJq-63ZRPdBvQnN9YQlpe5dKKg56MD
   - Order sent and status updates
   - Capture latency data performance metrics, post trade analysis
 ![postTrade.png](resources/postTrade.png)
-#### API design
-#### Detailed Design
+
+#### Low Latency
+- Take advantage of RAM or CPU Cache
+- Think about warmup of system and GC if Java
+#### Reliability
+- Distribute on each instrument or Pair (BTC_EUR, AAPL at NASDAQ, AAPL at SOME_EXCHANGE)
 #### Evaluation
 #### Distinctive component
 
@@ -78,9 +85,11 @@ https://www.youtube.com/watch?v=iwRaNYa8yTw&list=PLJq-63ZRPdBvQnN9YQlpe5dKKg56MD
 ## Design Stock Broker
 - Handle order cancellations first with exchange and then communicate to user
 - Think about idempotency
+  - can be done with idempotency key like exchangeOrderID otherwise retry
 - Need RDBMS bcoz of consitency
 - Display Price of Share - Take Average accross exchanges or display according to exchange
   - Get price info (market data) from exchanges via UDP
   - Create the price by throttling or get weighted average or aggregated by some time
   - Use cache to display price
-  - 
+  - Use Time Series DB
+![stockBroker.png](resources/stockBroker.png)
